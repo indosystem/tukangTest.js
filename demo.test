@@ -1,6 +1,6 @@
 open http://neo.sandbox.loket.com/login
 fill username lukluk
-fill password 123123
+fill password contactyoutadmin
 click "Sign In"
 waituntil "Create New Event"
 click "Create New Event"
