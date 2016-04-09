@@ -43,14 +43,28 @@ expect "form.newEvent"
 expect "title" contains "create new event"
 ```
 
-## Commands
-### Open
+### Use Random Text
+### Example
+```
+fill email RANDOM_EMAIL
+```
+another random text available :
+
+```
+RANDOM_PARAGRAPH, RANDOM_WORD, RANDOM_SENTENCE, RANDOM_AGE, RANDOM_BIRTHDAY,
+RANDOM_FIRST, RANDOM_GENDER, RANDOM_NAME, RANDOM_COLOR, RANDOM_DOMAIN, RANDOM_EMAIL,
+RANDOM_IP, RANDOM_ADDRESS, RANDOM_CITY, RANDOM_ZIP, RANDOM_COUNTRY, RANDOM_PHONE,
+RANDOM_PROVINCE, RANDOM_STATE, RANDOM_STREET, RANDOM_CC
+```
+
+### Commands
+#### Open
 
 ```
 open http://google.com
 ```
 
-### Click
+#### Click
 fill cssSelector eventtype
 event type : ‘mouseup’, ‘mousedown’, ‘mousemove’, ‘doubleclick’ or ‘click’
 
@@ -62,7 +76,7 @@ click "div.parents div.child #someButton"
 click "#id" doubleclick
 ```
 
-### Keyboard
+#### Keyboard
 keyboard eventType text/keyCode
 event type : ‘keyup’, ‘keypress’ or ‘keydown’
 
@@ -72,7 +86,7 @@ keyboard keypress 27 //escape
 keyboard keypress "hello"
 ```
 
-### Fill/Type
+#### Fill/Type
 fill cssSelector
 
 ```
@@ -89,7 +103,7 @@ select cssSelector label
 select "#dropDown_Qty" 10
 ```
 
-### WaitFor
+#### WaitFor
 waitfor cssSelector timeoutSeconds
 default : 15 seconds
 
@@ -99,7 +113,7 @@ waitfor ".class"
 waitfor ".class" 10
 ```
 
-### WaitUntil (soon)
+#### WaitUntil (soon)
 waituntil cssSelector property
 
 ```
@@ -107,7 +121,7 @@ waituntil "#id" hide
 waituntil "#id" visible
 ```
 
-### Expect
+#### Expect (Test Function)
 expect cssSelector attribute/text/cssProperty operator value
 
 ```
@@ -119,7 +133,7 @@ expect #someElement backgroundColor "#ff0000"
 expect #someElement display none
 ```
 
-### Evaluate
+#### Evaluate
 evaluate javascript
 
 ```

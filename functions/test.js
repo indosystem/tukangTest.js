@@ -17,6 +17,9 @@ module.exports = {
         if (params[2] == 'text') {
           val = jQuery(query).text();
         } else
+        if (params[2] == 'length') {
+          val = jQuery(query).length();
+        } else
         if (params[2] == 'html') {
           val = jQuery(query).html();
         } else
