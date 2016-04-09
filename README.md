@@ -29,25 +29,47 @@ open http://google.com
 ```
 
 ### Click
-fill cssSelector mode
+fill cssSelector eventtype
+event type : ‘mouseup’, ‘mousedown’, ‘mousemove’, ‘doubleclick’ or ‘click’
+
 ```
 click "Some Button"
 click "#someId"
 click ".aClass"
 click "div.parents div.child #someButton"
-click "#id" rightClick
+click "#id" doubleclick
 ```
 
-### Fill
+### Keyboard
+keyboard eventType text/keyCode
+event type : ‘keyup’, ‘keypress’ or ‘keydown’
+
+```
+keyboard keypress 13 //enter
+keyboard keypress 27 //escape
+keyboard keypress "hello"
+```
+
+### Fill/Type
 fill cssSelector
 
 ```
 fill nameElement "some text"
+type nameElement "some text"
 fill "form.someClass #email" "some text"
+```
+
+
+### Select
+select cssSelector label
+
+```
+select "#dropDown_Qty" 10
 ```
 
 ### WaitFor
 waitfor cssSelector timeoutSeconds
+default : 15 seconds
 
 ```
 waitfor "#id"
@@ -55,23 +77,24 @@ waitfor ".class"
 waitfor ".class" 10
 ```
 
-### WaitUntil 
+### WaitUntil (soon)
 waituntil cssSelector property
 
 ```
-waitfor "#id" hide
-waitfor "#id" visible
+waituntil "#id" hide
+waituntil "#id" visible
 ```
 
-### Assert
-assert expect cssSelector attribute operator value
+### Expect
+expect cssSelector attribute/text/cssProperty operator value
 
 ```
-assert expect #someElement text contains "success"
-assert expect #someElement value equal 1000
-assert expect #someElement length lessthan 10
-assert expect #someElement backgroundColor "#ff0000"
-assert expect #someElement display none
+expect #someElement html contains "success"
+expect #someElement text contains "success"
+expect #someElement value equal 1000
+expect #someElement length lessthan 10
+expect #someElement backgroundColor "#ff0000"
+expect #someElement display none
 ```
 
 ### Evaluate
@@ -80,5 +103,3 @@ evaluate javascript
 ```
 evaluate "console.log($('#d').val())"
 ```
-
-
