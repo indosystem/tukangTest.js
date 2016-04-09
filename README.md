@@ -1,24 +1,46 @@
 # tukangTest.js
 automated test for human
 
-## How to install
-### Linux
+### How to Install in Linux Terminal
+```
+apt-get install phantomjs
+git clone https://github.com/indosystem/tukangTest.js.git
+```
+
+### How to Install in Linux GUI
 ```
 apt-get install slimerjs
-apt-get install phantomjs
+git clone https://github.com/indosystem/tukangTest.js.git
 ```
 
 ### Install via NPM
 ```
 npm install slimerjs -g
 npm install phantomjs -g
+git clone https://github.com/indosystem/tukangTest.js.git
 ```
 need sudo (Mac/Linux)
 
+### How to Running
 ```
+cd tukangTest.js
 ./tukangtest-headless.js sometestCase.txt (support running under terminal server)
 or
 ./tukangtest-gui.js sometestCase.txt (GUI)
+```
+
+### Example Test Case File
+
+#### open create new event dialog
+```
+open http://neo.sandbox.loket.com/login
+fill username thisisnotvaliduser
+fill password contactyoutadmin
+click "Sign In"
+waitfor "Create New Event"
+click "Create New Event"
+expect "form.newEvent"
+expect "title" contains "create new event"
 ```
 
 ## Commands
