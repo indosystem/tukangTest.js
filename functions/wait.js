@@ -5,7 +5,7 @@ module.exports = {
             var match = params[0] == 'contains' ? params[0] : 'match'
             var keyword = params[0] == 'contains' ? params[1] : params[0]
             var timeout = parseInt(params[2])
-            timeout = timeout > 0 ? timeout : 1
+            timeout = timeout > 0 ? timeout : 15
             timeout = timeout * 10
             if (age > timeout) {
                 tukang.stop("timeout")
