@@ -1,13 +1,7 @@
 # tukangTest.js
 automated test for human
 
-### How to Install in Linux Terminal
-```
-apt-get install phantomjs
-git clone https://github.com/indosystem/tukangTest.js.git
-```
-
-### How to Install in Linux GUI
+### How to Install in Linux
 ```
 apt-get install slimerjs
 git clone https://github.com/indosystem/tukangTest.js.git
@@ -16,7 +10,6 @@ git clone https://github.com/indosystem/tukangTest.js.git
 ### Install via NPM
 ```
 npm install slimerjs -g
-npm install phantomjs -g
 git clone https://github.com/indosystem/tukangTest.js.git
 ```
 need sudo (Mac/Linux)
@@ -24,9 +17,7 @@ need sudo (Mac/Linux)
 ### How to Running
 ```
 cd tukangTest.js
-./tukangtest-headless.js sometestCase.txt (support running under terminal server)
-or
-./tukangtest-gui.js sometestCase.txt (GUI)
+./tukangtest.js sometestCase.txt
 ```
 
 ### Example Test Case File

@@ -6,13 +6,13 @@ module.exports = {
     } else {
       query = '*[name=' + params[0] + ']';
     }
-    var exist = tukang.web.page.evaluate(function(query) {
+    var exist = page.evaluate(function(query) {
       return jQuery(query).length;
     }, query)
     if (!exist) {
       tukang.stop(params[0] + " not valid element")
     } else {
-      var val = tukang.web.page.evaluate(function(query, params) {
+      var val = page.evaluate(function(query, params) {
         var val = false
         if (params[2] == 'text') {
           val = jQuery(query).text();

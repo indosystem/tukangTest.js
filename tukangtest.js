@@ -1,10 +1,10 @@
-#!/usr/bin/env phantomjs
+#!/usr/bin/env slimerjs
 
 var system = require('system');
 var args = system.args;
 var fs = require('fs')
 
-console.log('Tukang Test Headless - PhantomJs')
+console.log('Tukang Test GUI - Slimerjs')
 var tukang = require('./lib/tukang.js')
 
 

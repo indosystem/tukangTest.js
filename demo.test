@@ -1,7 +1,2 @@
-open http://neo.sandbox.loket.com/login
-fill username thisisnotvaliduser
-fill password contactyoutadmin
-click "Sign In"
-waituntil "Create New Event"
-click "Create New Event"
-
+it "should be open google "
+open http://dev.member.id
