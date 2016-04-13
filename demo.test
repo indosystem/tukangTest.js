@@ -1,2 +1,5 @@
-it "should be open google "
+it "should be login member.id officer"
 open http://dev.member.id
+fill #username saskia
+fill #password x123123x
+wait 10

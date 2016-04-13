@@ -4,7 +4,7 @@ module.exports = {
       tukang.next()
     },parseInt(params[0])*1000)
   },
-  waituntil: function(params) {
+  waitfor: function(params) {
         function _waituntil(callback, timeoutcallback, age) {
             if (!age) age = 0
             var match = params[0] == 'contains' ? params[0] : 'match'

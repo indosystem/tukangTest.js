@@ -1,14 +1,14 @@
 module.exports = {
-  keyboard: function(params){
-    page.sendEvent(params[0],params[1])
+  keyboard: function(params) {
+    page.sendEvent(params[0], params[1])
     tukang.next()
   },
   select: function(params) {
     var query = ''
-    if(tukang.isCSSselector(params[0])){
+    if (tukang.isCSSselector(params[0])) {
       query = params[0]
-    }else{
-      query = '*[name='+params[0]+']';
+    } else {
+      query = '*[name=' + params[0] + ']';
     }
     var exist = page.evaluate(function(query) {
       return jQuery(query).length;
@@ -51,24 +51,30 @@ module.exports = {
   click: function(params) {
     var query = '*:focus'
     var keyword = params[0]
-    if (params.length > 0) {
-      var match = params[0] == 'contains' ? params[0] : 'match'
-      var keyword = params[0] == 'contains' ? params[1] : params[0]
-      var mode = params[0] == 'contains' ? params[2] : params[1]
+    if (tukang.isCSSselector(params[0])) {
+      query = params[0]
+      var mode = params[1]
       mode = mode ? mode : 'click'
-      query = "*:" + match + "(" + keyword + "),input[value='" + keyword + "'],button[value='" + keyword + "']"
+    } else {
+      if (params.length > 0) {
+        var match = params[0] == 'contains' ? params[0] : 'match'
+        var keyword = params[0] == 'contains' ? params[1] : params[0]
+        query = "*:" + match + "(" + keyword + "),input[value='" + keyword + "'],button[value='" + keyword + "']"
 
+      }
     }
+
     var exist = page.evaluate(function(query) {
       return jQuery(query).length;
     }, query)
     if (!exist) {
       tukang.stop(keyword + " not valid element")
     } else {
+
       var rect = page.evaluate(function(query) {
         return jQuery(query)[0].getBoundingClientRect();
       }, query)
-      page.sendEvent(mode, rect.left + rect.width / 2, rect.top + rect.height / 2);
+      page.sendEvent(mode, rect.left + rect.width / 2, rect.top + rect.height / 2);      
       tukang.next()
     }
   }
