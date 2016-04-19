@@ -9,4 +9,7 @@ fill email RANDOM_EMAIL
 fill telephone RANDOM_PHONE
 fill *[name=identity_id] RANDOM_CC
 select *[name=dob_day] "10"
-wait 40
+select *[name=dob_month] "May"
+select *[name=dob_year] "1997"
+evaluate "$('*[name=gender][value=1]').prop("checked", true);"
+wait 10
