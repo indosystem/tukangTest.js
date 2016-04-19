@@ -1,4 +1,12 @@
+it "should be buy me two ticket"
 open http://neo.lis.dev.loket.id/widget/opp2ngcbrisl7t7
 select #ticket_150_336 2
-click input#buy_ticket
-wait 50
+click input[type=submit] doubleclick
+wait 2
+fill firstname RANDOM_NAME
+fill lastname RANDOM_NAME
+fill email RANDOM_EMAIL
+fill telephone RANDOM_PHONE
+fill *[name=identity_id] RANDOM_CC
+select *[name=dob_day] "10"
+wait 40
