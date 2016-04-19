@@ -1,0 +1,4 @@
+open http://neo.lis.dev.loket.id/widget/opp2ngcbrisl7t7
+select #ticket_150_336 2
+click input#buy_ticket
+wait 50

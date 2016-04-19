@@ -74,7 +74,12 @@ module.exports = {
       var rect = page.evaluate(function(query) {
         return jQuery(query)[0].getBoundingClientRect();
       }, query)
-      page.sendEvent(mode, rect.left + rect.width / 2, rect.top + rect.height / 2);      
+      page.sendEvent(mode, rect.left + rect.width / 2, rect.top + rect.height / 2);     
+      page.evaluate(function(x,y){
+        x-=25
+        y-=25
+        $('<div style="border-radius: 50%;position:absolute;width:50px;height:50px;background:rgba(100,100,100,0.5);left:'+x+'px;top:'+y+'px;">&nbsp;</div>').appendTo('body')
+      },rect.left + rect.width / 2, rect.top + rect.height / 2)
       tukang.next()
     }
   }
