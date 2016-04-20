@@ -94,6 +94,11 @@ select cssSelector label
 select "#dropDown_Qty" 10
 ```
 
+##### waitForNextPage
+```
+waitfornextpage
+```
+
 ##### WaitFor
 waitfor cssSelector timeoutSeconds
 default : 15 seconds
@@ -124,7 +129,7 @@ expect #someElement backgroundColor "#ff0000"
 expect #someElement display none
 ```
 
-##### Evaluate
+##### Evaluate (soon)
 evaluate javascript
 
 ```
