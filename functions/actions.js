@@ -13,8 +13,7 @@ module.exports = {
       page.evaluate(function(params) {
         $(params[0]).prop('checked', true)
       }, params)
-      this.click(params)
-      tukang.next()
+      this.click(params)  
     }
   },
   select: function(params) {
