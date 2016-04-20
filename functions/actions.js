@@ -12,6 +12,7 @@ module.exports = {
     } else {
       page.evaluate(function(params) {
         $(params[0]).prop('checked', true)
+        $(params[0]).trigger("change")
       }, params)
       tukang.next()
     }
