@@ -11,5 +11,12 @@ fill *[name=identity_id] RANDOM_CC
 select *[name=dob_day] "10"
 select *[name=dob_month] "May"
 select *[name=dob_year] "1997"
-evaluate "$('*[name=gender][value=1]').prop("checked", true);"
+checked *[name=gender][value=1]
+checked *[name=shipping_method][value=1]
+waitfor "#id-country-rev"
+select "#id-country-rev" "Indonesia"
+fill shipping_fullname RANDOM_NAME
+fill shipping_telephone RANDOM_PHONE
+fill shipping_address RANDOM_ADDRESS
+click "Selanjutnya"
 wait 10
