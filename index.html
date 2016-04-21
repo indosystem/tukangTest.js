@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tukangtest.js by indosystem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Tukangtest.js</h1>
+      <h2 class="project-tagline">automated test for human</h2>
+      <a href="https://github.com/indosystem/tukangTest.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/indosystem/tukangTest.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/indosystem/tukangTest.js/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="tukangtestjs" class="anchor" href="#tukangtestjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>tukangTest.js</h1>
+
+<p>automated test for human</p>
+
+<h3>
+<a id="how-to-install-in-linux" class="anchor" href="#how-to-install-in-linux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Install in Linux</h3>
+
+<pre><code>apt-get install slimerjs
+git clone https://github.com/indosystem/tukangTest.js.git
+</code></pre>
+
+<h3>
+<a id="install-via-npm" class="anchor" href="#install-via-npm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install via NPM</h3>
+
+<pre><code>npm install slimerjs -g
+git clone https://github.com/indosystem/tukangTest.js.git
+</code></pre>
+
+<p>need sudo (Mac/Linux)</p>
+
+<h3>
+<a id="how-to-running" class="anchor" href="#how-to-running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Running</h3>
+
+<pre><code>cd tukangTest.js
+./tukangtest.js sometestCase.txt
+</code></pre>
+
+<h3>
+<a id="example-test-case-file" class="anchor" href="#example-test-case-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Test Case File</h3>
+
+<h4>
+<a id="open-create-new-event-dialog" class="anchor" href="#open-create-new-event-dialog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>open create new event dialog</h4>
+
+<pre><code>open http://neo.sandbox.loket.com/login
+fill username thisisnotvaliduser
+fill password contactyoutadmin
+click "Sign In"
+waitfor "Create New Event"
+click "Create New Event"
+expect "form.newEvent"
+expect "title" contains "create new event"
+</code></pre>
+
+<h3>
+<a id="use-random-text" class="anchor" href="#use-random-text" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use Random Text</h3>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+
+<pre><code>fill email RANDOM_EMAIL
+</code></pre>
+
+<p>another random text available :</p>
+
+<pre><code>RANDOM_PARAGRAPH, RANDOM_WORD, RANDOM_SENTENCE, RANDOM_AGE, RANDOM_BIRTHDAY,
+RANDOM_FIRST, RANDOM_GENDER, RANDOM_NAME, RANDOM_COLOR, RANDOM_DOMAIN, RANDOM_EMAIL,
+RANDOM_IP, RANDOM_ADDRESS, RANDOM_CITY, RANDOM_ZIP, RANDOM_COUNTRY, RANDOM_PHONE,
+RANDOM_PROVINCE, RANDOM_STATE, RANDOM_STREET, RANDOM_CC
+</code></pre>
+
+<h3>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h3>
+
+<h5>
+<a id="open" class="anchor" href="#open" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Open</h5>
+
+<pre><code>open http://google.com
+</code></pre>
+
+<h5>
+<a id="click" class="anchor" href="#click" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Click</h5>
+
+<p>fill cssSelector eventtype
+event type : ‘mouseup’, ‘mousedown’, ‘mousemove’, ‘doubleclick’ or ‘click’</p>
+
+<pre><code>click "Some Button"
+click "#someId"
+click ".aClass"
+click "div.parents div.child #someButton"
+click "#id" doubleclick
+</code></pre>
+
+<h5>
+<a id="keyboard" class="anchor" href="#keyboard" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Keyboard</h5>
+
+<p>keyboard eventType text/keyCode
+event type : ‘keyup’, ‘keypress’ or ‘keydown’</p>
+
+<pre><code>keyboard keypress 13 //enter
+keyboard keypress 27 //escape
+keyboard keypress "hello"
+</code></pre>
+
+<h5>
+<a id="filltype" class="anchor" href="#filltype" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fill/Type</h5>
+
+<p>fill cssSelector</p>
+
+<pre><code>fill nameElement "some text"
+type nameElement "some text"
+fill "form.someClass #email" "some text"
+</code></pre>
+
+<h5>
+<a id="select" class="anchor" href="#select" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Select</h5>
+
+<p>select cssSelector label</p>
+
+<pre><code>select "#dropDown_Qty" 10
+</code></pre>
+
+<h5>
+<a id="waitfornextpage" class="anchor" href="#waitfornextpage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>waitForNextPage</h5>
+
+<pre><code>waitfornextpage
+</code></pre>
+
+<h5>
+<a id="waitfor" class="anchor" href="#waitfor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WaitFor</h5>
+
+<p>waitfor cssSelector timeoutSeconds
+default : 15 seconds</p>
+
+<pre><code>waitfor "#id"
+waitfor ".class"
+waitfor ".class" 10
+</code></pre>
+
+<h5>
+<a id="waituntil-soon" class="anchor" href="#waituntil-soon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WaitUntil (soon)</h5>
+
+<p>waituntil cssSelector property</p>
+
+<pre><code>waituntil "#id" hide
+waituntil "#id" visible
+</code></pre>
+
+<h5>
+<a id="expect-test-function" class="anchor" href="#expect-test-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Expect (Test Function)</h5>
+
+<p>expect cssSelector attribute/text/cssProperty operator value</p>
+
+<pre><code>expect #someElement html contains "success"
+expect #someElement text contains "success"
+expect #someElement value equal 1000
+expect #someElement length lessthan 10
+expect #someElement backgroundColor "#ff0000"
+expect #someElement display none
+</code></pre>
+
+<h5>
+<a id="evaluate-soon" class="anchor" href="#evaluate-soon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evaluate (soon)</h5>
+
+<p>evaluate javascript</p>
+
+<pre><code>evaluate "console.log($('#d').val())"
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/indosystem/tukangTest.js">Tukangtest.js</a> is maintained by <a href="https://github.com/indosystem">indosystem</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
