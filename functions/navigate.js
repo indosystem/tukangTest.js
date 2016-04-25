@@ -1,13 +1,4 @@
-module.exports = {
-  waitfornextpage: function() {
-    var _waitNextPage = function() {
-      if (!tukang.pageloaded) {
-        setTimeout(_waitNextPage, 1000)
-      } else {
-        tukang.next()
-      }
-    }
-  },
+module.exports = {  
   open: function(params) {
     console.log(params[0])
     page.open(params[0], function(status) {

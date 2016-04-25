@@ -1,0 +1,22 @@
+open "http://neo.lis.dev.loket.id/widget/opp2ngcbrisl7t7"
+select "#ticket_150_336" "1"
+click "#buy_ticket"
+waitfornextpage
+type "firstname" "sdsdsds"
+type "lastname" "sdsdsdsd"
+type "email" "sdsdsds@sds.com"
+type "identity_id" "sdsd"
+select "dob_day" "02"
+select "dob_month" "June"
+select "dob_year" "1965
+checked "INPUT[type='radio'][name='gender'][value='1']"
+checked "INPUT[type='radio'][name='shipping_method'][value='1'][onclick='check_is_delivery(1);']"
+select "#id-country-rev" "Indonesia"
+type "shipping_fullname" "sdsdsdsd"
+type "shipping_telephone" "sdsdsd"
+type "shipping_address" "sdsdsd"
+click ".btn.btn-blue.btn--block"
+waitfornextpage
+checked "INPUT[type='radio'][name='id_list_payment'][onclick='calculate_payment();'][value='30']"
+click "#btn-submit"
+waitfornextpage

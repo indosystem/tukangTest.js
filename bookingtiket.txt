@@ -1,22 +1,22 @@
 it "should be buy me two ticket"
 open http://neo.lis.dev.loket.id/widget/opp2ngcbrisl7t7
-select #ticket_150_336 2
+select "#ticket_150_337" 2
 click input[type=submit] doubleclick
 wait 2
 fill firstname RANDOM_NAME
 fill lastname RANDOM_NAME
 fill email RANDOM_EMAIL
 fill telephone RANDOM_PHONE
-fill *[name=identity_id] RANDOM_CC
-select *[name=dob_day] "10"
-select *[name=dob_month] "May"
-select *[name=dob_year] "1997"
+fill identity_id RANDOM_CC
+select dob_day "10"
+select dob_month "May"
+select dob_year "1997"
 checked *[name=gender][value=1]
 checked *[name=shipping_method][value=1]
-waitfor "#id-country-rev"
+waitfor shipping_country
 select "#id-country-rev" "Indonesia"
 fill shipping_fullname RANDOM_NAME
 fill shipping_telephone RANDOM_PHONE
 fill shipping_address RANDOM_ADDRESS
-click "Selanjutnya"
-wait 10
+click Selanjutnya
+wait 100

@@ -13,7 +13,7 @@ module.exports = {
       page.evaluate(function(params) {
         $(params[0]).prop('checked', true)
       }, params)
-      this.click(params)  
+      this.click(params)
     }
   },
   select: function(params) {
@@ -27,7 +27,7 @@ module.exports = {
       return jQuery(query).length;
     }, query)
     if (!exist) {
-      tukang.stop(params[0] + " not valid element")
+      tukang.stop(params[0] + " not valid element ")
     } else {
       page.evaluate(function(query, params) {
         $(query).find('option').filter(function() {
@@ -52,7 +52,7 @@ module.exports = {
       return jQuery(query).length;
     }, query)
     if (!exist) {
-      tukang.stop(params[0] + " not valid element")
+      tukang.stop(params[0] + " not valid element"+query)
     } else {
       page.evaluate(function(query, params) {
         jQuery(query).val(params[1])
