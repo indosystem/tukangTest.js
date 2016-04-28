@@ -1,6 +1,0 @@
-it "shouldbe login"
-open http://neo.lis.dev.loket.id
-fill #inputEmail lisdiana
-fill #inputPassword 123123
-click .btn
-wait 3
